@@ -3,15 +3,16 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://AYASAMIR-COLLAB.github.io/task",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "predeploy": "npm run build",
+    "build-gh": "vite build --base=/task/",
+    "predeploy": "npm run build-gh",
     "deploy": "gh-pages -d dist"
   },
-  "homepage": "https://AYASAMIR-COLLAB.github.io/atm-app",
   "dependencies": {
     "react": "^19.1.1",
     "react-dom": "^19.1.1"
