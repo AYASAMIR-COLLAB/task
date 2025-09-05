@@ -1,5 +1,7 @@
-import { useState } from 'react'
-import './App.css'
+import { useState } from 'react';
+import './App.css';
+import WithdrawalForm from './components/WithdrawalForm';
+import ResultDisplay from './components/ResultDisplay';
 
 function App() {
   const [amount, setAmount] = useState("");
@@ -32,20 +34,12 @@ function App() {
   return (
     <div className="container">
       <h1>ATM</h1>
-      <form onSubmit={submit}>
-        <input 
-          type="number"
-          value={amount}
-          onChange={(e) => setAmount(e.target.value)}
-          placeholder="Enter the amount"
-        />
-        <button type="submit">Withdraw</button>
-      </form>
-      <div>
-        {result.map((line, index) => (
-          <p key={index}>{line}</p>
-        ))}
-      </div>
+      <WithdrawalForm 
+        onSubmit={submit} 
+        amount={amount} 
+        onAmountChange={(e) => setAmount(e.target.value)} 
+      />
+      <ResultDisplay result={result} />
     </div>
   );
 }
